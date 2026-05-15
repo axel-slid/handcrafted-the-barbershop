@@ -1,6 +1,6 @@
-# Handcrafted the Barbershop
+# Eddie J. Fades Best Barbershop Haircuts Millbrae
 
-Static Vite website for Handcrafted the Barbershop in Millbrae, CA.
+Static Vite website for Eddie J. Fades Best Barbershop Haircuts Millbrae.
 
 [Deploy with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/axel-slid/handcrafted-the-barbershop)
 
@@ -30,5 +30,6 @@ npm run build
 - Booking buttons point to the provided Booksy URL.
 - Service pricing was added from the supplied Booksy screenshots.
 - Haircut photos are saved under `assets/yelp/` from the Yelp images supplied in the project prompt.
+- Public business info was updated from Booksy: 5.0 rating, 208 reviews, mobile service, and phone number `(415) 577-0511`.
 - Update the canonical URL, `robots.txt`, and `sitemap.xml` if you choose a custom domain instead of `handcrafted-the-barbershop.vercel.app`.
 - Confirm current services, hours, and pricing directly with the business before publishing.

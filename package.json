@@ -2,7 +2,7 @@
   "name": "handcrafted-the-barbershop",
   "version": "1.0.0",
   "private": true,
-  "description": "Static website for Handcrafted the Barbershop in Millbrae, CA.",
+  "description": "Static website for Eddie J. Fades Best Barbershop Haircuts Millbrae.",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
