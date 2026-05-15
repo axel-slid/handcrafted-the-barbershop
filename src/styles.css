@@ -132,8 +132,11 @@ button {
 
 .hero-media {
   background:
-    linear-gradient(90deg, rgba(12, 12, 12, 0.82) 0%, rgba(12, 12, 12, 0.55) 41%, rgba(12, 12, 12, 0.12) 78%),
-    url("/assets/barbershop-hero.png") center / cover no-repeat;
+    linear-gradient(90deg, rgba(12, 12, 12, 0.94) 0%, rgba(12, 12, 12, 0.72) 48%, rgba(12, 12, 12, 0.2) 100%),
+    url("/assets/yelp/geometric-design.png") right 8% top 13% / min(30vw, 360px) no-repeat,
+    url("/assets/yelp/fade-beard.png") right 28% center / min(34vw, 430px) no-repeat,
+    url("/assets/yelp/kids-logo-design.png") right 8% bottom 13% / min(30vw, 360px) no-repeat,
+    #151515;
   inset: 0;
   position: absolute;
 }
@@ -395,14 +398,17 @@ details,
   max-width: 1180px;
 }
 
-.feature-photo {
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  min-height: 440px;
-  overflow: hidden;
+.yelp-gallery {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.feature-photo img {
+.yelp-gallery img {
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 250, 241, 0.16);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -609,8 +615,8 @@ details p {
 
   .hero-media {
     background:
-      linear-gradient(180deg, rgba(12, 12, 12, 0.54) 0%, rgba(12, 12, 12, 0.86) 100%),
-      url("/assets/barbershop-hero.png") center / cover no-repeat;
+      linear-gradient(180deg, rgba(12, 12, 12, 0.68) 0%, rgba(12, 12, 12, 0.92) 100%),
+      url("/assets/yelp/fade-beard.png") center / cover no-repeat;
   }
 
   .hero-content {
@@ -630,10 +636,6 @@ details p {
 
   .service-card {
     min-height: auto;
-  }
-
-  .feature-photo {
-    min-height: 300px;
   }
 
   .site-footer {

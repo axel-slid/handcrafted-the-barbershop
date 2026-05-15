@@ -29,5 +29,6 @@ npm run build
 
 - Booking buttons point to the provided Booksy URL.
 - Service pricing was added from the supplied Booksy screenshots.
+- Haircut photos are saved under `assets/yelp/` from the Yelp images supplied in the project prompt.
 - Update the canonical URL, `robots.txt`, and `sitemap.xml` if you choose a custom domain instead of `handcrafted-the-barbershop.vercel.app`.
 - Confirm current services, hours, and pricing directly with the business before publishing.
