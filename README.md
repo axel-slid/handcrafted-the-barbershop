@@ -28,5 +28,6 @@ npm run build
 ## Notes before launch
 
 - Booking buttons point to the provided Booksy URL.
+- Service pricing was added from the supplied Booksy screenshots.
 - Update the canonical URL, `robots.txt`, and `sitemap.xml` if you choose a custom domain instead of `handcrafted-the-barbershop.vercel.app`.
 - Confirm current services, hours, and pricing directly with the business before publishing.

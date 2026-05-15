@@ -324,6 +324,19 @@ details,
   padding: 26px;
 }
 
+.price-grid .service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 310px;
+}
+
+.service-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .service-card .icon {
   align-items: center;
   background: var(--ink);
@@ -337,9 +350,31 @@ details,
   width: 44px;
 }
 
+.duration {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 900;
+}
+
 .service-card a {
   color: var(--accent-dark);
   font-weight: 900;
+  margin-top: auto;
+}
+
+.price {
+  color: var(--ink);
+  display: block;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.price span {
+  color: #8a8781;
+  font-size: 18px;
+  font-weight: 800;
+  margin-right: 8px;
+  text-decoration: line-through;
 }
 
 .craft-section {
