@@ -132,11 +132,12 @@ button {
 
 .hero-media {
   background:
-    linear-gradient(90deg, rgba(12, 12, 12, 0.94) 0%, rgba(12, 12, 12, 0.72) 48%, rgba(12, 12, 12, 0.2) 100%),
-    url("/assets/yelp/geometric-design.png") right 8% top 13% / min(30vw, 360px) no-repeat,
-    url("/assets/yelp/fade-beard.png") right 28% center / min(34vw, 430px) no-repeat,
-    url("/assets/yelp/kids-logo-design.png") right 8% bottom 13% / min(30vw, 360px) no-repeat,
+    linear-gradient(90deg, rgba(12, 12, 12, 0.96) 0%, rgba(12, 12, 12, 0.76) 43%, rgba(12, 12, 12, 0.28) 100%),
+    url("/assets/yelp/lightning-design.png") right 4% top 11% / min(25vw, 310px) no-repeat,
+    url("/assets/yelp/fade-beard.png") right 26% center / min(33vw, 420px) no-repeat,
+    url("/assets/yelp/shop-action.png") right 4% bottom 11% / min(25vw, 310px) no-repeat,
     #151515;
+  animation: heroCollage 14s ease-in-out infinite alternate;
   inset: 0;
   position: absolute;
 }
@@ -383,6 +384,25 @@ details,
 .craft-section {
   background: #20282c;
   color: var(--paper);
+  overflow: hidden;
+  position: relative;
+}
+
+.craft-section::before {
+  background:
+    linear-gradient(90deg, rgba(196, 154, 85, 0.18) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(196, 154, 85, 0.1) 1px, transparent 1px);
+  background-size: 58px 58px;
+  content: "";
+  inset: 0;
+  opacity: 0.2;
+  pointer-events: none;
+  position: absolute;
+}
+
+.craft-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .craft-section p,
@@ -392,26 +412,129 @@ details,
 
 .craft-layout {
   display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 28px;
+  grid-template-columns: minmax(0, 1.5fr) minmax(310px, 0.7fr);
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: 1280px;
+}
+
+.work-marquee {
+  color: rgba(255, 250, 241, 0.12);
+  display: flex;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 10vw, 132px);
+  font-weight: 900;
+  gap: clamp(24px, 5vw, 64px);
+  line-height: 0.85;
+  margin: -10px 0 34px;
+  overflow: hidden;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.work-marquee span {
+  animation: driftText 18s linear infinite;
 }
 
 .yelp-gallery {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  grid-auto-flow: dense;
+  grid-auto-rows: 150px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.yelp-gallery img {
-  aspect-ratio: 1;
+.gallery-card {
+  animation: riseIn 680ms ease both;
   border: 1px solid rgba(255, 250, 241, 0.16);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(0);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.gallery-card:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.gallery-card:nth-child(3) {
+  animation-delay: 130ms;
+}
+
+.gallery-card:nth-child(4) {
+  animation-delay: 190ms;
+}
+
+.gallery-card:nth-child(5) {
+  animation-delay: 240ms;
+}
+
+.gallery-card:nth-child(6) {
+  animation-delay: 300ms;
+}
+
+.gallery-card:nth-child(7) {
+  animation-delay: 360ms;
+}
+
+.gallery-card:nth-child(8) {
+  animation-delay: 420ms;
+}
+
+.gallery-card:hover {
+  border-color: rgba(240, 188, 95, 0.7);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+  transform: translateY(-6px) rotate(-0.35deg);
+}
+
+.gallery-card img {
   height: 100%;
   object-fit: cover;
+  transition: transform 420ms ease;
   width: 100%;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-card::after {
+  background: linear-gradient(180deg, transparent 46%, rgba(0, 0, 0, 0.76) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.gallery-card figcaption {
+  bottom: 14px;
+  color: #fffaf1;
+  font-size: 13px;
+  font-weight: 900;
+  left: 14px;
+  letter-spacing: 0.08em;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.gallery-card.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-card.wide {
+  grid-column: span 2;
+}
+
+.gallery-card.tall {
+  grid-row: span 2;
 }
 
 .craft-list {
@@ -423,6 +546,16 @@ details,
   background: rgba(255, 250, 241, 0.08);
   border-color: rgba(255, 250, 241, 0.16);
   padding: 24px;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.craft-list article:hover {
+  background: rgba(255, 250, 241, 0.12);
+  border-color: rgba(240, 188, 95, 0.45);
+  transform: translateX(6px);
 }
 
 .craft-list h3 {
@@ -591,6 +724,11 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .yelp-gallery {
+    grid-auto-rows: 128px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .service-grid,
   .review-grid,
   .faq-grid {
@@ -616,7 +754,7 @@ details p {
   .hero-media {
     background:
       linear-gradient(180deg, rgba(12, 12, 12, 0.68) 0%, rgba(12, 12, 12, 0.92) 100%),
-      url("/assets/yelp/fade-beard.png") center / cover no-repeat;
+      url("/assets/yelp/lightning-design.png") center / cover no-repeat;
   }
 
   .hero-content {
@@ -634,6 +772,18 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .yelp-gallery {
+    grid-auto-rows: 118px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-card.large,
+  .gallery-card.wide,
+  .gallery-card.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
   .service-card {
     min-height: auto;
   }
@@ -645,5 +795,58 @@ details p {
 
   .button {
     width: 100%;
+  }
+}
+
+@keyframes heroCollage {
+  from {
+    background-position:
+      center,
+      right 4% top 11%,
+      right 26% center,
+      right 4% bottom 11%,
+      center;
+  }
+
+  to {
+    background-position:
+      center,
+      right 7% top 9%,
+      right 23% center,
+      right 7% bottom 9%,
+      center;
+  }
+}
+
+@keyframes driftText {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-220px);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
   }
 }
