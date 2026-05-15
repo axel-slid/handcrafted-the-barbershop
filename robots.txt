@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://handcrafted-the-barbershop.vercel.app/sitemap.xml
